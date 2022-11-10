@@ -4,35 +4,34 @@ using System;
 
 namespace Library
 {
-    public class Node
+    public class Node<T>
     {
-        private int number;
+        
+        public T Value {get; set;}
+        public Persona Persona;
 
-        private List<Node> children = new List<Node>();
+        private List<Node<T>> children = new List<Node<T>>();
 
-        public int Number {
-            get
-            {
-                return this.number;
-            }
-        }
-
-        public ReadOnlyCollection<Node> Children { 
+        public ReadOnlyCollection<Node<T>> Children { 
             get
             {
                 return this.children.AsReadOnly();
             }
         }
 
-        public Node(int number)
+        public Node(T t)
         {
-            this.number = number;
+            this.Value = t;
         }
 
-        public void AddChildren(Node n)
+        public void AddChildren(Node<T> n)
         {
             this.children.Add(n);
         }
-        
+
+        public void Accept(Visitor<T> v)
+        {
+            v.Visit(this);
+        }
     }
 }
