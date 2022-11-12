@@ -1,10 +1,10 @@
-/*using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System;
 
 namespace Library
 {
-    public class MayorHijo :Visitor<Node<Persona>>
+    public class MayorHijo :Visitor<Persona>
     {
         public int edad;
         public override void Visit(Node<Persona> nodo)
@@ -16,6 +16,10 @@ namespace Library
                     edad = nodo.Value.Edad;
                 }
             }
+            foreach (Node<Persona> hijo in nodo.Children)
+            {
+                hijo.Accept(this);
+            }
         }
     }
-}*/
+}

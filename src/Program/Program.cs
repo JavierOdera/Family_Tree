@@ -46,12 +46,17 @@ namespace Program
             lista.Add(n7);
             lista.Add(n8);
             
-            SumaEdad s = new SumaEdad();
-            s.Visit(n1);
-            Console.WriteLine(s.suma);
-            
+            SumaEdad S = new SumaEdad();
+            S.Visit(n1);
+            Console.WriteLine(S.suma);
 
-            
+            NombreMasLargo L = new NombreMasLargo();
+            L.Visit(n1);
+            Console.WriteLine(L.largo);
+
+            MayorHijo M = new MayorHijo();
+            M.Visit(n1);
+            Console.WriteLine(M.edad);
         }
     }
 }

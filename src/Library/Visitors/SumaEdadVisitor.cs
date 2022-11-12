@@ -11,7 +11,8 @@ namespace Library
         {
             suma = suma + nodo.Value.Edad;
             foreach (Node<Persona> hijo in nodo.Children)
-            {hijo.Accept(this);
+            {
+                hijo.Accept(this);
             }
 
         }
