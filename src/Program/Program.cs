@@ -48,15 +48,15 @@ namespace Program
             
             SumaEdad S = new SumaEdad();
             S.Visit(n1);
-            Console.WriteLine(S.suma);
+            Console.WriteLine($"\nLa suma de las edades de todos los miembros de este arbol es de {S.suma} años \n" );
 
             NombreMasLargo L = new NombreMasLargo();
             L.Visit(n1);
-            Console.WriteLine(L.largo);
+            Console.WriteLine($"{L.Nombre} tiene el nombre mas largo con {L.Largo} letras \n");
 
             MayorHijo M = new MayorHijo();
             M.Visit(n1);
-            Console.WriteLine(M.edad);
+            Console.WriteLine($"{M.Nombre} es el mayor hijo(hoja) con {M.Edad}años \n");
         }
     }
 }

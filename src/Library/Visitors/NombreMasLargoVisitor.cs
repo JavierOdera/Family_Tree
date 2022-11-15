@@ -6,12 +6,14 @@ namespace Library
 {
     public class NombreMasLargo :Visitor<Persona>
     {
-        public int largo = 0;
+        public int Largo = 0;
+        public string Nombre;
         public override void Visit(Node<Persona> nodo)
         {
-            if (nodo.Value.Nombre.Length > largo)
+            if (nodo.Value.Nombre.Length > Largo)
             {
-                largo = nodo.Value.Nombre.Length;
+                Largo = nodo.Value.Nombre.Length;
+                Nombre= nodo.Value.Nombre;
             }
             foreach (Node<Persona> hijo in nodo.Children)
             {
